@@ -18,11 +18,11 @@ module Players
             elsif board.cells[combo[1]] == board.cells[combo[2]] && board.taken?(combo[1] + 1)
               move = board.cells[combo[0]]
             elsif
-              move = [1, 3, 7, 9].detect{|i| !board.taken?(i)}.to_s 
+              move = [1, 3, 7, 9].detect{|i| !board.taken?(i)}.to_s
             else
               move = "#{1 + Random.rand(9)}"
-            end 
-          end
+            end
+          #end
         end 
       end
     end
