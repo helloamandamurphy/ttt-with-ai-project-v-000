@@ -12,18 +12,18 @@ module Players
       elsif board.turn_count > 2
         Game::WIN_COMBINATIONS.detect do |combo|
             if board.cells[combo[0]] == board.cells[combo[1]] && board.taken?(combo[0] + 1)
-              move = board.cells[combo[2]]
+              move = board.cells[combo[2]].first
             elsif board.cells[combo[0]] == board.cells[combo[2]] && board.taken?(combo[0] + 1)
-              move = board.cells[combo[1]]
+              move = board.cells[combo[1]].first
             elsif board.cells[combo[1]] == board.cells[combo[2]] && board.taken?(combo[1] + 1)
-              move = board.cells[combo[0]]
+              move = board.cells[combo[0]].first
             elsif
               move = [1, 3, 7, 9].detect{|i| !board.taken?(i)}.to_s
             else
               move = "#{1 + Random.rand(9)}"
             end
           #end
-        end 
+        end
       end
     end
   end
