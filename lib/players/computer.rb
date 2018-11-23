@@ -12,6 +12,7 @@ module Players
       elsif board.turn_count > 2
         Game::WIN_COMBINATIONS.detect do |combo|
             if board.cells[combo[0]] == board.cells[combo[1]] && board.taken?(combo[0] + 1)
+              binding.pry
               move = board.cells[combo[2]]
             elsif board.cells[combo[0]] == board.cells[combo[2]] && board.taken?(combo[0] + 1)
               move = board.cells[combo[1]]
