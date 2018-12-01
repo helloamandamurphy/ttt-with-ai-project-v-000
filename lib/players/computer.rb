@@ -8,7 +8,7 @@ module Players
       elsif board.turn_count == 1
         move = "#{[1, 3, 7, 9].sample.to_s}"
       elsif board.turn_count == 2
-        move = [1, 3, 7, 9].detect{|i| !board.taken?(i)}.to_s
+        move = [1, 3, 7, 9].detect{|i| !board.taken?(i)}
       elsif board.turn_count > 2
         Game::WIN_COMBINATIONS.detect do |combo|
             if board.cells[combo[0]] == board.cells[combo[1]] && board.taken?(combo[0] + 1)
